@@ -24,7 +24,7 @@ such that it remains valid but one of its public inputs differs.
 ### Criteria
 
 There is a challenge contract deployed at
-[`0x5cf96D3b9f85A0B1C478eaCe65970B246e2283b7`](https://etherscan.io/address/0x5cf96D3b9f85A0B1C478eaCe65970B246e2283b7)
+[`0x4575d05f604ec912148c79e79Be09659186d63fA`](https://etherscan.io/address/0x4575d05f604ec912148c79e79Be09659186d63fA)
 on the Ethereum mainnet. It exposes a `solve()` function which accepts a
 Groth16 proof. The proof corresponds to the circuit described below. `solve()`
 will call a verifier function which will use the caller's Ethereum address as
