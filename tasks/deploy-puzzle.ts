@@ -27,9 +27,5 @@ task("deploy:puzzle", "Deploy a Puzzle contract")
 
     logs && console.log(`Initial funds successfully sent`);
 
-    await hre.tenderly.persistArtifacts({
-	name: "Puzzle",
-	address: puzzle.address,
-    })
     return puzzle
   })
