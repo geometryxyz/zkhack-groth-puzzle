@@ -13,7 +13,7 @@
 		"deploy:puzzle:rinkeby": "hardhat --network rinkeby deploy:puzzle",
 		"deploy:puzzle:mainnet": "hardhat --network mainnet deploy:puzzle",
 		"verify:puzzle:kovan": "hardhat verify --network kovan contrat_address https://gateway.pinata.cloud/ipfs/QmYsrePrBhoWdxJD5oDSeuviCknQcfqoggDg6LkghaTw85 11000000000",
-		"verify:puzzle:rinkeby": "hardhat verify --network rinkeby 0x9CDED7739bE225c3ec8B45a91260abF632aaCfAf ipfs://QmVS2eXrFkPKt8szXuTwYauRg27JekMPbBrtg3QpksRchT 11000000000",
+		"verify:puzzle:rinkeby": "hardhat verify --network rinkeby 0xCdF6f07c62bAc17e811c2F05f988ab12137e1D57 ipfs://QmVS2eXrFkPKt8szXuTwYauRg27JekMPbBrtg3QpksRchT 100000000000",
 		"verify:puzzle:mainnet": "hardhat verify --network mainnet 0x4575d05f604ec912148c79e79Be09659186d63fA ipfs://QmNqAuUbFWUoQoyTWmzj1DGEEGnwgsQDZiMQLjtBpTp356 100000000000",
 		"test": "hardhat test",
 		"test:report-gas": "REPORT_GAS=true hardhat test",

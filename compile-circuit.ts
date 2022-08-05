@@ -41,7 +41,7 @@ async function main() {
         await download(url, buildPath)
     }
 
-    await exec(`circom ./circuits/${circuit}.circom --r1cs --wasm -o ${buildPath}`)
+    await exec(`circom --O0 ./circuits/${circuit}.circom --r1cs --wasm -o ${buildPath}`)
 
     await zKey.newZKey(
         `${buildPath}/${circuit}.r1cs`,

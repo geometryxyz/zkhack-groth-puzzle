@@ -50,14 +50,13 @@ contract Puzzle is Ownable, Pausable, ERC721, ERC721URIStorage, Verifier {
         );
 
         uint256 _a = uint256(uint160(address(msg.sender)));
-        uint256 _one = uint256(1);
 
         require(
             verifyProof(
                 [_proof[0], _proof[1]],
                 [[_proof[2], _proof[3]], [_proof[4], _proof[5]]],
                 [_proof[6], _proof[7]],
-                [_a, _one]
+                [_a]
             ),
             "Puzzle: Invalid proof"
         );

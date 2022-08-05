@@ -43,7 +43,7 @@ export interface PuzzleInterface extends utils.Interface {
     "transferFrom(address,address,uint256)": FunctionFragment;
     "transferOwnership(address)": FunctionFragment;
     "unpause()": FunctionFragment;
-    "verifyProof(uint256[2],uint256[2][2],uint256[2],uint256[2])": FunctionFragment;
+    "verifyProof(uint256[2],uint256[2][2],uint256[2],uint256[1])": FunctionFragment;
     "withdraw()": FunctionFragment;
   };
 
@@ -118,7 +118,7 @@ export interface PuzzleInterface extends utils.Interface {
       [BigNumberish, BigNumberish],
       [[BigNumberish, BigNumberish], [BigNumberish, BigNumberish]],
       [BigNumberish, BigNumberish],
-      [BigNumberish, BigNumberish]
+      [BigNumberish]
     ]
   ): string;
   encodeFunctionData(functionFragment: "withdraw", values?: undefined): string;
@@ -389,7 +389,7 @@ export interface Puzzle extends BaseContract {
       a: [BigNumberish, BigNumberish],
       b: [[BigNumberish, BigNumberish], [BigNumberish, BigNumberish]],
       c: [BigNumberish, BigNumberish],
-      input: [BigNumberish, BigNumberish],
+      input: [BigNumberish],
       overrides?: CallOverrides
     ): Promise<[boolean] & { r: boolean }>;
 
@@ -502,7 +502,7 @@ export interface Puzzle extends BaseContract {
     a: [BigNumberish, BigNumberish],
     b: [[BigNumberish, BigNumberish], [BigNumberish, BigNumberish]],
     c: [BigNumberish, BigNumberish],
-    input: [BigNumberish, BigNumberish],
+    input: [BigNumberish],
     overrides?: CallOverrides
   ): Promise<boolean>;
 
@@ -603,7 +603,7 @@ export interface Puzzle extends BaseContract {
       a: [BigNumberish, BigNumberish],
       b: [[BigNumberish, BigNumberish], [BigNumberish, BigNumberish]],
       c: [BigNumberish, BigNumberish],
-      input: [BigNumberish, BigNumberish],
+      input: [BigNumberish],
       overrides?: CallOverrides
     ): Promise<boolean>;
 
@@ -783,7 +783,7 @@ export interface Puzzle extends BaseContract {
       a: [BigNumberish, BigNumberish],
       b: [[BigNumberish, BigNumberish], [BigNumberish, BigNumberish]],
       c: [BigNumberish, BigNumberish],
-      input: [BigNumberish, BigNumberish],
+      input: [BigNumberish],
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
@@ -906,7 +906,7 @@ export interface Puzzle extends BaseContract {
       a: [BigNumberish, BigNumberish],
       b: [[BigNumberish, BigNumberish], [BigNumberish, BigNumberish]],
       c: [BigNumberish, BigNumberish],
-      input: [BigNumberish, BigNumberish],
+      input: [BigNumberish],
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 

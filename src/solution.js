@@ -12,18 +12,6 @@ const finalZkeyPath = path.join(config.paths.build.snark, circuit, `${circuit}_f
 const vkeyPath = path.join(config.paths.build.snark, circuit, `${circuit}_verification_key.json`)
 const vKey = JSON.parse(fs.readFileSync(vkeyPath, "utf-8"))
 
-const a = F.e("1")
-const b = F.e("1")
-const c = F.e("1")
-const d = F.e("1")
-
-const witness = {
-    a: a.toString(),
-    b: b.toString(),
-    c: c.toString(),
-    d: d.toString(),
-};
-
 console.assert = (cond, msg) => {
 	if( cond )	return;
 	if( console.assert.useDebugger ) debugger;
@@ -31,7 +19,7 @@ console.assert = (cond, msg) => {
 };
 
 const run = async () => {
-    const { proof, publicSignals } = await genProof(witness, wasmFilePath, finalZkeyPath);
+    const { proof, publicSignals } = JSON.parse(`{"proof":{"pi_a":["7076778705842675636541778654824835671264842003792815899892788518756808417824","4871300562969249383482829591051792322271432570205055011710223197671646924652","1"],"pi_b":[["4702507968743578934061693422759564470881256571473408115314331474240229998811","16198326042603795115438219508756675682917780977814561672804657276368883889354"],["12916734195569167956837700546311420400354235424337271822709448553494046311159","20167467333119574021428597666293210644874141810710695584907560968298314755986"],["1","0"]],"pi_c":["20014664648588403789442308373435642542109961553284949305762265534102084844319","10562544426189233680286850591386198483452124187323754995599976212942563914034","1"],"protocol":"groth16","curve":"bn128"},"publicSignals":["1"]}`);
     const isValid = await verifyProof(vKey, { proof, publicSignals });
     console.assert(isValid === true, "Proof is not valid");
 
