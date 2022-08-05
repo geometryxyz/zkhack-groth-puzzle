@@ -125,41 +125,6 @@ describe("Puzzle", async () => {
     expect(uri1).to.eq(uri);
   });
 
-  // let wallets: any[] = [];
-
-  // it.skip("should prevent double-minting and transfers", async () => {
-  //   const limit = 10;
-  //   for (let i = 0; i < limit; i ++) {
-  //     let w = ethers.Wallet.createRandom();
-  //     w = w.connect(owner.provider);
-  //     wallets.push(w);
-
-  //     let tx = {
-  //         to: w.address,
-  //         value: ethers.utils.parseEther('0.1'),
-  //     };
-  //     let receipt = await owner.sendTransaction(tx);
-  //   }
-
-  //   for (let i = 0; i < limit; i ++) {
-  //     const w = wallets[i];
-  //     const tx = await puzzle.devMint(w.address);
-  //     await tx.wait();
-  //     const ownerOfNft = await puzzle.ownerOf(i);
-  //     expect(ownerOfNft).to.eq(w.address);
-
-  //     const tx2 = puzzle.devMint(w.address);
-  //     await expect(tx2).to.be.revertedWith(
-  //         "Puzzle: already minted"
-  //     );
-  //   }
-  //   let w0 = wallets[0];
-  //   let w1 = wallets[1];
-  //   // @ts-ignore
-  //   const transferTx = puzzle.connect(w0).functions['transferFrom(address,address,uint256)'](w0.address, w1.address, 0);
-  //   await expect(transferTx).to.be.revertedWith("Token is not transferable");
-  // });
-
   it("burning the admin key should make the contract trustless", async () => {
       const burnAddress = '0x000000000000000000000000000000000000dead'
       const tx = await puzzle.transferOwnership(burnAddress);
