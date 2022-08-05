@@ -1,0 +1,25 @@
+node_modules
+.env
+
+coverage
+coverage.json
+
+#Buidler files
+cache
+artifacts
+
+typechain
+yarn-error.log
+
+build/*
+build/contracts
+build/typechain
+build/snark/circuit/powersOfTau28_hez_final_14.ptau
+
+test/malleable-test.ts
+
+
+dist/*
+dapp/dist
+dapp/node_modules
+.DS_Store

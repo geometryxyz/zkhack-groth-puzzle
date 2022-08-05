@@ -1,0 +1,93 @@
+{
+	"name": "groth-puzzle",
+	"version": "0.0.1",
+	"description": "Puzzle",
+	"main": "index.js",
+	"scripts": {
+		"start": "hardhat node",
+		"compile": "hardhat compile",
+		"deploy:puzzle": "hardhat deploy:puzzle",
+		"deploy:puzzle:kovan": "hardhat --network kovan deploy:puzzle",
+		"deploy:puzzle:localhost": "hardhat --network localhost deploy:puzzle",
+		"deploy:puzzle:tenderly": "hardhat --network tenderly deploy:puzzle",
+		"deploy:puzzle:rinkeby": "hardhat --network rinkeby deploy:puzzle",
+		"deploy:puzzle:mainnet": "hardhat --network mainnet deploy:puzzle",
+		"verify:puzzle:kovan": "hardhat verify --network kovan contrat_address https://gateway.pinata.cloud/ipfs/QmYsrePrBhoWdxJD5oDSeuviCknQcfqoggDg6LkghaTw85 11000000000",
+		"verify:puzzle:rinkeby": "hardhat verify --network rinkeby 0x9CDED7739bE225c3ec8B45a91260abF632aaCfAf ipfs://QmVS2eXrFkPKt8szXuTwYauRg27JekMPbBrtg3QpksRchT 11000000000",
+		"verify:puzzle:mainnet": "hardhat verify --network rinkeby 0x9CDED7739bE225c3ec8B45a91260abF632aaCfAf ipfs://QmVS2eXrFkPKt8szXuTwYauRg27JekMPbBrtg3QpksRchT 11000000000",
+		"test": "hardhat test",
+		"test:report-gas": "REPORT_GAS=true hardhat test",
+		"test:coverage": "hardhat coverage",
+		"test:prod": "yarn lint && yarn test",
+		"typechain": "hardhat typechain",
+		"compile:circuit": "npx ts-node compile-circuit.ts --circuit=circuit",
+		"build": "hardhat typechain && tsc",
+		"solve": "node src/solution.js"
+	},
+	"devDependencies": {
+		"@nomiclabs/hardhat-ethers": "^2.0.4",
+		"@nomiclabs/hardhat-etherscan": "^3.1.0",
+		"@nomiclabs/hardhat-waffle": "^2.0.2",
+		"@openzeppelin/contracts": "^4.5.0",
+		"@tenderly/hardhat-tenderly": "^1.1.4",
+		"@typechain/ethers-v5": "^9.0.0",
+		"@typechain/hardhat": "^4.0.0",
+		"@types/chai": "^4.3.0",
+		"@types/download": "^8.0.1",
+		"@types/jest": "^27.4.1",
+		"@types/mocha": "^9.1.0",
+		"@types/node": "^17.0.12",
+		"@types/rimraf": "^3.0.2",
+		"chai": "^4.3.5",
+		"circomlib": "^2.0.3",
+		"circomlibjs": "^0.1.2",
+		"cz-conventional-changelog": "^3.3.0",
+		"dotenv": "^14.3.2",
+		"download": "^8.0.0",
+		"ethereum-waffle": "^3.4.0",
+		"ethers": "^5.5.3",
+		"ffjavascript": "^0.2.51",
+		"hardhat": "^2.8.3",
+		"hardhat-gas-reporter": "^1.0.7",
+		"js-logger": "^1.6.1",
+		"lint-staged": "^12.3.2",
+		"prettier": "^2.7.1",
+		"prettier-plugin-solidity": "^1.0.0-beta.19",
+		"rimraf": "^3.0.2",
+		"solhint": "^3.3.6",
+		"solhint-plugin-prettier": "^0.0.5",
+		"solidity-coverage": "^0.7.18",
+		"ts-command-line-args": "^2.2.1",
+		"ts-node": "^10.4.0",
+		"typechain": "^7.0.0",
+		"typescript": "^4.5.5"
+	},
+	"dependencies": {
+		"@testing-library/jest-dom": "^5.16.4",
+		"@testing-library/user-event": "^13.5.0",
+		"@types/jest": "^27.5.2",
+		"@types/node": "^16.11.42",
+		"ethers": "^5.6.9",
+		"typescript": "^4.7.4",
+		"snarkjs": "github:geometryresearch/snarkjs"
+	},
+	"config": {
+		"solidity": {
+			"version": "0.8.4"
+		},
+		"paths": {
+			"contracts": "./contracts",
+			"circuit": "./circuit",
+			"tests": "./test",
+			"cache": "./cache",
+			"build": {
+				"snark": "./build/snark/",
+				"contracts": "./build/contracts",
+				"typechain": "./build/typechain"
+			}
+		},
+		"commitizen": {
+			"path": "./node_modules/cz-conventional-changelog"
+		}
+	}
+}
