@@ -69,7 +69,7 @@
 		"@types/node": "^16.11.42",
 		"ethers": "^5.6.9",
 		"typescript": "^4.7.4",
-		"snarkjs": "github:geometryresearch/snarkjs"
+		"snarkjs": "https://github.com/geometryresearch/snarkjs"
 	},
 	"config": {
 		"solidity": {
