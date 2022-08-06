@@ -24,7 +24,7 @@ such that it remains valid but one of its public inputs differs.
 ### Criteria
 
 There is a challenge contract deployed at
-[`0x4575d05f604ec912148c79e79Be09659186d63fA`](https://etherscan.io/address/0x4575d05f604ec912148c79e79Be09659186d63fA)
+[`0x4af905A972eab5020F965889EAd5bB4a20c1C2c3`](https://etherscan.io/address/0x4af905A972eab5020F965889EAd5bB4a20c1C2c3)
 on the Ethereum mainnet. It exposes a `solve()` function which accepts a
 Groth16 proof. The proof corresponds to the circuit described below. `solve()`
 will call a verifier function which will use the caller's Ethereum address as
@@ -89,7 +89,7 @@ Step 2: Do some magic on proof such that script runs with no errors and you will
 ```
 
 Next, navigate to the verifier contract page on 
-[`Etherscan`](https://etherscan.io/address/0x5cf96D3b9f85A0B1C478eaCe65970B246e2283b7),
+[`Etherscan`](https://etherscan.io/address/0x4af905A972eab5020F965889EAd5bB4a20c1C2c3),
 connect your web3 wallet (using the account whose address is the first public
 input), and submit the above formatted proof to the `solve()` textbox. Click on
 "Write" to submit your transaction.

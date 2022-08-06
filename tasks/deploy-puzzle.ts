@@ -6,7 +6,7 @@ task("deploy:puzzle", "Deploy a Puzzle contract")
   .setAction(async ({ logs }, hre): Promise<Contract> => {
 
     const ethers = hre.ethers;
-    const uri = "ipfs://QmVS2eXrFkPKt8szXuTwYauRg27JekMPbBrtg3QpksRchT";
+    const uri = "ipfs://QmPagd4H4oqVudZCGiDxf17HuZRHBqQjjY7sZ5QuWuW47t";
     const refundingGasPrice = BigInt("100000000000");
 
     const PuzzleFactory = await ethers.getContractFactory("Puzzle")
@@ -15,7 +15,7 @@ task("deploy:puzzle", "Deploy a Puzzle contract")
     logs && console.log(`Puzzle contract has been deployed to: ${puzzle.address}`)
 
     // put some eher at the beggining
-    let provider = new ethers.providers.InfuraProvider("rinkeby");
+    let provider = new ethers.providers.InfuraProvider("mainnet");
     const owner = new ethers.Wallet(`0x${process.env.BACKEND_PRIVATE_KEY}`, provider);
     let tx = {
       to: puzzle.address,
